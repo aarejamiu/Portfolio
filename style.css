@@ -1,0 +1,42 @@
+/* Force navbar background and text color to ensure custom styles show */
+#l1, nav#l1.navbar {
+    background-color: midnightblue !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Ensure brand and links are readable on dark background */
+#l1 .navbar-brand,
+#l1 .nav-link,
+#l1 .navbar-nav .nav-link {
+    color: #ffffff !important;
+}
+
+/* Toggler icon contrast (for collapsed mobile view) */
+#l1 .navbar-toggler-icon {
+    filter: invert(1) grayscale(1) brightness(2);
+}
+
+#main-talk {
+    margin-top: 120px;
+    padding: 20px 40px;
+}
+.hero {
+    height: 90vh;
+    background: linear-gradient(to bottom right, #d7eaea,#f7ffff);
+}
+.profile-circle {
+    width: 280px;
+    height: 280px;
+    margin: auto;
+    border-radius: 50%;
+    padding: 10px;
+    background: radial-gradient(circle, #0e8888, #0f5f5f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-circle img {
+    width: 60%;
+}
