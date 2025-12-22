@@ -40,3 +40,8 @@
 .profile-circle img {
     width: 60%;
 }
+.bbody {
+    margin: 0px;
+    background-color: darkgrey;
+    color: black;
+}
