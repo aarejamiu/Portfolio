@@ -1,97 +1,148 @@
-/* Force navbar background and text color to ensure custom styles show */
-#l1, nav#l1.navbar {
-    background-color: midnightblue !important;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: darkblue;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 15px 30px;
+    color: white;
+    z-index: 1000;
 }
 
-/* Ensure brand and links are readable on dark background */
-#l1 .navbar-brand,
-#l1 .nav-link,
-#l1 .navbar-nav .nav-link {
-    color: #ffffff !important;
+.logo {
+    font-size: 20px;
 }
 
-/* Toggler icon contrast (for collapsed mobile view) */
-#l1 .navbar-toggler-icon {
-    filter: invert(1) grayscale(1) brightness(2);
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
 }
 
-@media screen and (max-width: 600px) {
-    nav ul {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
-        padding-left: 0;
-    }
-
-    nav button {
-        margin-top: 10px;
-    }
+.nav-links a {
+    color: white;
+    text-decoration: none;
 }
 
-#main-talk {
-    /* margin-top: 120px; */
-    padding: 20px 40px;
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
 }
+
+/* ================= HERO ================= */
 .hero {
-    height: 90vh;
-    background: linear-gradient(to bottom right, #d7eaea,#f7ffff);
-}
-.profile-circle img {
-    width: 60%;
-}
-.bbody {
-    margin: 0px;
-    background-color: darkgrey;
-    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 40px;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
-@media screen and (max-width: 768px) {
-    #main-talk > div {
+.hero-text {
+    flex: 1 1 300px;
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+.hero-text h5 {
+    margin-top: 10px;
+    color: gray;
+    font-weight: normal;
+}
+
+.hero-text p {
+    margin-top: 20px;
+    line-height: 1.7;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: blue;
+    color: white;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+.quote {
+    margin-top: 30px;
+    font-style: italic;
+    color: #555;
+}
+
+.hero-image {
+    flex: 1 1 300px;
+    text-align: center;
+}
+
+.hero-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ================= MOBILE & TABLET ================= */
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: darkblue;
         flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+    }
+
+    .nav-links.active {
+        max-height: 300px;
+        padding: 20px 0;
+    }
+
+    /* HERO */
+    .hero {
+        flex-direction: column;
+        text-align: center;
         padding: 40px 20px;
     }
 
-    #main-talk h1 {
+    .hero-text h1 {
         font-size: 28px;
-        text-align: left;
     }
 
-    #main-talk h5 {
-        font-size: 14px;
-        text-align: left;
-    }
-
-    #main-talk p {
-        font-size: 14px;
-    }
-
-    #main-talk img {
+    .hero-image img {
         width: 200px;
         height: 200px;
-        margin: 20px auto 0 auto;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    #main-talk h1 {
-        font-size: 24px;
-    }
-
-    #main-talk h5 {
-        font-size: 12px;
-    }
-
-    #main-talk p {
-        font-size: 13px;
-    }
-
-    #main-talk img {
-        width: 150px;
-        height: 150px;
     }
 }
 
